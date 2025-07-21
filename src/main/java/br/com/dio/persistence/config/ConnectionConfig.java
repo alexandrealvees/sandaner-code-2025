@@ -12,12 +12,12 @@ import static lombok.AccessLevel.PRIVATE;
 public final class ConnectionConfig {
 
     public static Connection getConnection() throws SQLException {
-        var url = "jdbc:mysql://localhost/board";
-        var user = "board";
-        var password = "board";
-        var connection = DriverManager.getConnection(url, user, password);
+        String url = "jdbc:mysql://localhost:3306/meubanco?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        String user = "root";
+        String password = "senha123";
+
+        Connection connection = DriverManager.getConnection(url, user, password);
         connection.setAutoCommit(false);
         return connection;
     }
-
 }
